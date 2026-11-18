@@ -34,7 +34,7 @@ export default function About() {
 
         <div className="mb-8">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-emerald-400">
-            What I'm learning
+            What I&apos;m learning
           </p>
 
           <h2 className="text-3xl font-bold text-white">
@@ -43,7 +43,7 @@ export default function About() {
           </h2>
 
           <p className="mt-3 text-slate-400">
-            Technologies and tools I'm exploring through
+            Technologies and tools I&apos;m exploring through
             my coursework and personal projects.
           </p>
         </div>
