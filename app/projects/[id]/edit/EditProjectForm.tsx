@@ -10,6 +10,7 @@ interface Project {
   description: string;
   technologies: string[];
   link: string | null;
+  year_completed: number;
 }
 
 export default async function EditProjectForm({ id }: { id: string }) {
@@ -20,7 +21,7 @@ export default async function EditProjectForm({ id }: { id: string }) {
   }
 
   const projects = await sql`
-    SELECT id, title, description, technologies, link
+    SELECT id, title, description, technologies, link, year_completed
     FROM projects
     WHERE id = ${projectId}
   ` as Project[];
@@ -97,6 +98,25 @@ export default async function EditProjectForm({ id }: { id: string }) {
             Separate each technology with a comma.
           </p>
         </div>
+
+        <div>
+  <label
+    htmlFor="yearCompleted"
+    className="mb-2 block text-sm font-medium text-white"
+  >
+    Year Completed
+  </label>
+  <input
+    id="yearCompleted"
+    name="yearCompleted"
+    type="number"
+    min="2000"
+    max={new Date().getFullYear()}
+    required
+    defaultValue={project.year_completed}
+    className="w-full rounded-lg border border-slate-700 bg-[#111c2e] px-4 py-3 text-white outline-none focus:border-emerald-400"
+  />
+</div>
 
         <div>
           <label htmlFor="link" className="mb-2 block text-sm font-medium text-white">

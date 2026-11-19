@@ -8,6 +8,7 @@ interface ProjectCardProps {
   description: string;
   technologies: string[];
   link: string | null;
+  year_completed: number;
 }
 
 export default function ProjectCard({

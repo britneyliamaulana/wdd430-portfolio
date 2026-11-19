@@ -7,6 +7,7 @@ interface Project {
   description: string;
   technologies: string[];
   link: string | null;
+  year_completed: number;
 }
 
 interface ProjectListProps {

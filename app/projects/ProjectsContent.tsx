@@ -8,13 +8,14 @@ interface Project {
   description: string;
   technologies: string[];
   link: string | null;
+  year_completed: number;
 }
 
 export default async function ProjectsContent() {
   const projects = await sql`
-    SELECT id, title, description, technologies, link
-    FROM projects
-    ORDER BY id DESC
+  SELECT id, title, description, technologies, link, year_completed
+  FROM projects
+  ORDER BY id DESC
   ` as Project[];
 
   return (
